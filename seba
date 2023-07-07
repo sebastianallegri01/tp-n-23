@@ -1,0 +1,36 @@
+#include <iostream>
+#include <vector>
+
+std::vector<int> encontrarFactores(int n)
+{
+    std::vector<int> factores;
+
+    for (int i = 1; i <= n; i++) {
+        if (n % i == 0) {
+            factores.push_back(i);
+        }
+    }
+
+    return factores;
+}
+
+int main()
+{
+    int numero;
+
+    std::cout << "Ingrese un número: ";
+    std::cin >> numero;
+
+    std::vector<int> vectorFactores = encontrarFactores(numero);
+
+    std::cout << "Vector Factores: [";
+    for (int i = 0; i < vectorFactores.size(); i++) {
+        std::cout << vectorFactores[i];
+        if (i != vectorFactores.size() - 1) {
+            std::cout << ", ";
+        }
+    }
+    std::cout << "]" << std::endl;
+
+    return 0;
+}
